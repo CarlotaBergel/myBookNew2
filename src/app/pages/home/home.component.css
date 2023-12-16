@@ -1,0 +1,11 @@
+main{
+    width: 80%;
+    margin:auto;
+    height: 80vh;
+}
+h1{
+    text-align: center;
+}
+p{
+    margin: 30px;
+}

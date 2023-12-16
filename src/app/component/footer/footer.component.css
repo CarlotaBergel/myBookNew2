@@ -1,0 +1,17 @@
+footer{
+    background-color: black;
+    height: 7vh;
+    width: 100%;
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+li{
+    padding-top: 20px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
