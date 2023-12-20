@@ -1,0 +1,40 @@
+<main>
+    <h1>Nuestro perfil</h1>
+    <div class="card-container col" id="border">
+        <div class="col cards">
+            <div class="card col align-items-center " style="width: 300px;">
+                <div><img class="card-img-top rounded-circle" id="img" src="{{person.photo}}" alt="Card image cap" width="50px"></div>
+                <div class="card-body">
+                    <h5 class="card-tittle">{{ person.name }} {{person.last_name}}</h5>
+                    <p class="card-text">Nombre: {{person.name}}</p>
+                    <p class="card-text">Apellidos: {{person.last_name}}</p>
+                    <p class="card-text">Email: {{person.email}}</p>
+                </div>
+            </div>
+            <div class="card col contForm" style="width: 100px;">
+                <h1>Editar datos</h1>
+                <form>
+                    <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Nombre" #nombre>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" aria-describedby="apellidoHelp" placeholder="Apellidos" #apellido>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" #email>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="url" class="form-control" id="url" placeholder="URL" #url>
+                    </div>
+    
+                    <button (click)="update(nombre,apellido,email,url)" type="button" class="d-grid gap-2 col-6 mx-auto m-4">Modificar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
