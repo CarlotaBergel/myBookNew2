@@ -1,0 +1,68 @@
+<body>
+    <h1>LIBROS</h1>
+    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis, beatae tempora sequi architecto repellendus! Vel fuga, laudantium voluptatem officiis repellat eligendi quia cumque delectus perferendis harum blanditiis autem? Ut. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dolores voluptatum dicta veritatis doloribus repudiandae praesentium ullam suscipit minima nulla illum eligendi blanditiis rem, non, molestiae, harum sapiente accusantium dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet atque voluptatem, illum at esse exercitationem voluptas fugit mollitia. Corporis, iste ad officia soluta consectetur pariatur ratione cupiditate nihil aperiam?</p>
+    
+    <div class="row justify-content-center">
+        <div *ngIf="libro.length === 0"> 
+            <h1>No hay libros disponbles</h1> 
+        </div>
+        <ng-container *ngFor="let libro of libro; let i = index">
+            
+            <div class="card mb-3 row" style="width: 350px">
+                <div class="col g-0">
+                    <img src="{{libro.photo}}" width="200px" height="250px" class="imgCard">
+                    <div class="col-md-8 r card-body">
+                        <h5 class="card-title">{{libro.title}}</h5>
+                        <p>Id libro: {{libro.id_book | refBooks }}</p>
+                        <p>Id usuario: {{libro.id_user}}</p>
+                        <p>Tipo: {{libro.type}}</p>
+                        <p>Autor: {{libro.author}}</p>
+                        <p>Precio: {{libro.price}}</p>
+                        <div class="d-grid gap-2 boton">
+                            <button type="button" [ngClass]="i%2 == 0 ?'pares':'impares'">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="contenedorFormulario">
+        <div class="formulario">			
+            <h1>Añadir un libro</h1>
+            <form>				
+                <p>
+                    <label for="id_book" class="colocar_nombre">Id libro</label>
+                    <input type="text" name="introducir_id_book" id="id_book" placeholder="Id libro" #id_book>
+                </p>
+                <p>
+                    <label for="id_user" class="colocar_apellido">Id usuario</label>
+                    <input type="text" name="introducir_id_user" id="id_user" placeholder="Id usuario" #id_user>
+                </p>
+                <p>
+                    <label for="title" class="colocar_title">Título<span class="obligatorio">*</span></label>
+                    <input type="text" name="introducir_title" id="title" required placeholder="Título" #title>
+                </p>
+                <p>
+                    <label for="type" class="colocar_tipo">Tipo <span class="obligatorio">*</span></label>
+                    <input type="text" name="introducir_type" id="type" required placeholder="Tipo" #type>
+                </p>	
+                <p>
+                    <label for="author" class="colocar_tipo">Autor <span class="obligatorio">*</span></label>
+                    <input type="text" name="introducir_author" id="author" required placeholder="Autor" #author>
+                </p> 
+                <p>
+                    <label for="price" class="colocar_price">Precio <span class="obligatorio">*</span></label>
+                    <input type="number" name="introducir_price" id="price" required placeholder="Precio" #price>
+                </p>
+                <p>
+                    <label for="photo" class="colocar_photo">Imágen <span class="obligatorio">*</span></label>
+                    <input type="text" name="introducir_photo" id="photo" required placeholder="Imágen" #photo>
+                </p>
+                <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
+                <div>
+                    <button type="button" (click)="addBooks(title,type,author,price,photo)">Añadir</button>
+                </div>                
+            </form>
+        </div>	
+    </div>
+</body>
