@@ -25,4 +25,8 @@ export class BooksComponent {
     console.log(newBook);
     this.book.push(newBook);
   }
+  cerrarCard(number){
+    // console.log(number);
+    this.book = this.book.filter(book => book.id_book !=number);
+  }
 }

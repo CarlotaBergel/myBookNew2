@@ -1,29 +1,14 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <body>
     <h1>LIBROS</h1>
     <p id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis, beatae tempora sequi architecto repellendus! Vel fuga, laudantium voluptatem officiis repellat eligendi quia cumque delectus perferendis harum blanditiis autem? Ut. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dolores voluptatum dicta veritatis doloribus repudiandae praesentium ullam suscipit minima nulla illum eligendi blanditiis rem, non, molestiae, harum sapiente accusantium dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet atque voluptatem, illum at esse exercitationem voluptas fugit mollitia. Corporis, iste ad officia soluta consectetur pariatur ratione cupiditate nihil aperiam?</p>
     
-    <div class="row justify-content-center">
-        <div *ngIf="book.length === 0"> <h1>No hay libros disponbles</h1></div>
-        <ng-container *ngFor="let libro of book; let i = index">
-                <div class="card mb-3 row" style="width: 350px">
-                <div class="col g-0">
-                    <img src="{{book[i].photo}}" width="200px" height="250px" class="imgCard">
-                    <div class="col-md-8 r card-body">
-                        <h5 class="card-title">{{book.title}}</h5>
-                        <p>Id book: {{book[i].id_book  | refBooks}}</p>
-                        <p>Id user: {{book[i].id_user}}</p>
-                        <p>type: {{book[i].type}}</p>
-                        <p>Author: {{book[i].author}}</p>
-                        <p>price: {{book[i].price}}</p>
-                        <div class="d-grid gap-2 boton"><button type="button" [ngClass]="i%2 == 0 ?'pares':'impares'">Comprar</button></div>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
+    <div class="cards">
+        <div *ngIf="book.length === 0"> <h1>No hay libros disponbles</h1> </div>
+        <ng-container *ngFor="let bookPadre of book; let i = index"> <app-card [libro]="bookPadre" [index]="i" (cerrarCard) = "cerrarCard($event)" ></app-card> </ng-container>
     </div>
-    <div class="contenedorFormulario">
-        <div class="formulario">			
+
+        <div class="contenedorFormulario">
+        <div class="formulario">
             <h1>Añadir un libro</h1>
             <form>				
                 <p>

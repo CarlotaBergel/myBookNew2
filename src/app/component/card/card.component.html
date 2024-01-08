@@ -1,0 +1,19 @@
+<ng-container class="col">
+    <div class="card mb-3 row" style="width: 350px">
+        <button class="btx" (click)="closedX()">X</button>
+           <div class="col g-0 cards">
+            <img src="{{libro.photo}}" width="200px" height="250px" class="imgCard">
+            <div class="col-md-8 r card-body">
+                <h5 class="card-title">{{libro.title}}</h5>
+                <p>Id libro: {{libro.id_book | refBooks }}</p>
+                <p>Id usuario: {{libro.id_user}}</p>
+                <p>Tipo: {{libro.type}}</p>
+                <p>Autor: {{libro.author}}</p>
+                <p>Precio: {{libro.price}}</p>
+                <div class="d-grid gap-2" >
+                    <button id="botonComprar" class="btn btn-primary" type="button">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
