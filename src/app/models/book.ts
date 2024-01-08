@@ -6,14 +6,19 @@ export class Book {
     public author:string;
     public price:number;
     public photo:string;
+    //Variable del objeto BOOK que incrementa con la creación de un book
+    private static contador:number = 0;
 
-    constructor(id_book:number, id_user:number, title:string, type:string, author:string, price:number, photo:string){
-        this.id_book = 0;
+
+    constructor(titulo:string, tipo:string, autor:string, precio:number, foto:string){
+        this.id_book = Book.contador;
         this.id_user = 0;
-        this.title = title;
-        this.type = type;
-        this.author = author;
-        this.price = price;
-        this.photo = photo;
+        this.title = titulo;
+        this.type = tipo;
+        this.author = autor;
+        this.price = precio;
+        this.photo = foto;
+
+        Book.contador++;
     }
 }
