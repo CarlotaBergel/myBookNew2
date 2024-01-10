@@ -1,0 +1,57 @@
+body{
+    width: 100%;
+    min-height:700px ;
+}
+
+h1{
+    text-align: center;
+    margin: 10px;
+    color: white;
+}
+
+.contenedorFormulario{	
+	width: 460px; 
+    margin-top: 20px;
+    margin-left: 35%;
+    margin-bottom: 20px;
+	border-radius: 10px;  
+	padding-top: 20px;
+	padding-bottom: 10px;  
+    background-color: black; 
+    padding-left: 30px; 
+}
+input{
+	background-color: white; 
+	width: 408px;
+	height: 40px; 
+	border-radius: 5px;  
+	margin-top: 10px;  
+	padding-left: 10px;
+}
+label{
+    display: block; 
+    float: center;
+    color: white;	
+}
+form button{
+	height: 45px;  	
+	margin-bottom: 10px; 
+	margin-top: 10px; 	
+	background-color: white; 
+	border-radius: 10px;	
+    width: 400px;
+}
+.aviso{
+	font-size: 13px;  
+	color: white;  
+}
+form h1{
+	font-size: 39px;  
+	text-align: letf; 
+	color: white;
+}
+form p{
+	font-size: 14px; 
+	color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}

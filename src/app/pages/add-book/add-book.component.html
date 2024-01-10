@@ -1,0 +1,39 @@
+<div class="contenedorFormulario">
+    <div class="formulario">			
+        <h1>Añadir un libro</h1>
+        <form>				
+            <p>
+                <label for="id_book" class="colocar_nombre">Id libro</label>
+                <input type="text" name="introducir_id_book" id="id_book" placeholder="Id libro" #id_book>
+            </p>
+            <p>
+                <label for="id_user" class="colocar_apellido">Id usuario</label>
+                <input type="text" name="introducir_id_user" id="id_user" placeholder="Id usuario" #id_user>
+            </p>
+            <p>
+                <label for="title" class="colocar_title">Título<span class="obligatorio">*</span></label>
+                <input type="text" name="introducir_title" id="title" required placeholder="Título" #title>
+            </p>
+            <p>
+                <label for="type" class="colocar_tipo">Tipo <span class="obligatorio">*</span></label>
+                <input type="text" name="introducir_type" id="type" required placeholder="Tipo" #type>
+            </p>	
+            <p>
+                <label for="author" class="colocar_tipo">Autor <span class="obligatorio">*</span></label>
+                <input type="text" name="introducir_author" id="author" required placeholder="Autor" #author>
+            </p> 
+            <p>
+                <label for="price" class="colocar_price">Precio <span class="obligatorio">*</span></label>
+                <input type="number" name="introducir_price" id="price" required placeholder="Precio" #price>
+            </p>
+            <p>
+                <label for="photo" class="colocar_photo">Imágen <span class="obligatorio">*</span></label>
+                <input type="text" name="introducir_photo" id="photo" required placeholder="Imágen" #photo>
+            </p>
+            <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
+            <div>
+                <button type="button" (click)="addBooks(title.value, type.value, author.value, price.value, photo.value, id_book.value,id_user.value)">Añadir</button>
+            </div>                
+        </form>
+    </div>	
+</div>
