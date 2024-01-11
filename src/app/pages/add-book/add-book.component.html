@@ -3,10 +3,6 @@
         <h1>Añadir un libro</h1>
         <form>				
             <p>
-                <label for="id_book" class="colocar_nombre">Id libro</label>
-                <input type="text" name="introducir_id_book" id="id_book" placeholder="Id libro" #id_book>
-            </p>
-            <p>
                 <label for="title" class="colocar_title">Título<span class="obligatorio">*</span></label>
                 <input type="text" name="introducir_title" id="title" required placeholder="Título" #title>
             </p>
@@ -28,7 +24,7 @@
             </p>
             <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
             <div>
-                <button type="button" (click)="addBooks(title.value, type.value, author.value, price.value, photo.value, id_book.value)">Añadir</button>
+                <button type="button" (click)="addBooks(title.value, type.value, author.value, price.value, photo.value)">Añadir</button>
             </div>                
         </form>
     </div>	
