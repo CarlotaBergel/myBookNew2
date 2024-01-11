@@ -26,9 +26,8 @@
                 <label for="id_book" class="colocar_nombre">Id libro</label>
                 <input type="text" name="introducir_id_book" id="id_book" placeholder="Id libro" #id_book>
             </p>
-            <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
             <div>
-                <button type="button">Modificar</button>
+                <button type="button" (click)="update(title.value, type.value, author.value, price.value, photo.value, id_book.value)">Modificar</button>
             </div>                
         </form>
     </div>	

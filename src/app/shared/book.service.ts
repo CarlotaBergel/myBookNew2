@@ -12,10 +12,10 @@ export class BooksService {
   constructor() {
     
     this.books = [
-      new Book("La sirenita", "Infantil", "Josefina Palomares", 18,"https://acortar.link/4A8ivP"),
-      new Book("La cenicienta", "Infantil","Pepe Gallardo",21,"https://acortar.link/2Vjz2t"),
-      new Book("Un cuento perfecto", "Juvenil","Elisabett Benavent",18,"https://acortar.link/HfXpo2"),
-      new Book("Todo lo que nunca fuimos", "Juvenil","Alice Kellen",15,"https://acortar.link/iQ8TkE"),
+      new Book("La sirenita", "Infantil", "Josefina", 18,"https://acortar.link/4A8ivP"),
+      new Book("La cenicienta", "Infantil","Pepe",21,"https://acortar.link/2Vjz2t"),
+      new Book("Un cuento perfecto", "Juvenil","Elisabett",18,"https://acortar.link/HfXpo2"),
+      new Book("Todo lo que nunca fuimos", "Juvenil","Alice",15,"https://acortar.link/iQ8TkE"),
     ]
   }
 
@@ -31,10 +31,16 @@ export class BooksService {
     this.books.push(book);
   }
 
- edit(book:Book): boolean{
-    let cambiar = this.books.findIndex(val => val.id_book == book.id_book);
-    if(cambiar !== -1){
-      this.books[cambiar] = book;
+ edit(book:Book, id:number): boolean{
+    let indice = this.books.findIndex(val => val.id_book == id);
+    if(indice !== -1){
+      this.books[indice].id_book = id;
+      this.books[indice].title = book.title;
+      this.books[indice].type = book.type;
+      this.books[indice].author = book.author;
+      this.books[indice].price = book.price;
+      this.books[indice].photo = book.photo;
+
       return true;
 
     }else{
