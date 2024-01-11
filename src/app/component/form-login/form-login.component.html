@@ -1,0 +1,55 @@
+<body>
+    <h1 class="title">LOGIN</h1>
+
+    <!-- FORMULARIO TEMPLETE DRIVEN -->
+
+    <!-- <div class = "contenido">
+        <div class= "main">
+            <form class="mb-4" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class= "form-control" style="width:259px" name="email" [(ngModel)]="email" #emailId="ngModel" [ngClass]="{'is-invalid':(emailId.dirty || emailId.touched) && emailId.invalid}" email required>
+                    <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid " class="invalid-feedback">
+                        <div class="error" *ngIf="emailId.errors.required">El email es obligatorio</div>
+                        <div class="error" *ngIf="emailId.errors.email">El email es incorrecto</div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" class= "form-control" style="width:250px" name="password" [(ngModel)]="password"  #passwordId="ngModel" [ngClass]="{'is-invalid':(passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
+                    <div *ngIf="(passwordId.dirty || passwordId.touched) && passwordId.invalid" class="invalid-feedback">
+                        <p class="error" *ngIf="passwordId.errors.required">La contraseña es obligatorio</p>
+                        <p class="error" *ngIf="passwordId.errors.minlength">La contraseña debe tener al menos 8 caracteres</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-danger btn-block" [disabled]="loginForm.invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>    -->
+
+    <!-- FORMULARIO MODELDRIVEN -->
+    <form [formGroup]= "myForm" class="mb-4" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div>
+            <label> Email </label>
+            <input type="email" class="form-control" style="width: 250px" formControlName="email" [ngClass]="{'is-invalid': myForm.get('email').dirty || myForm.get('email').touched && !myForm.get('email').valid}">
+            <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
+                <div class="error" *ngIf="myForm.get('email').errors.required">El email es obligatorio</div>
+                <div class="error" *ngIf="myForm.get('email').errors.email">El email es incorrecto</div>
+            </div>
+        </div>
+        <div>
+            <label> Contraseña </label>
+            <input type="password" class="form-control" style="width: 250px" formControlName="password" [ngClass]="{'is-invalid': myForm.get('password').dirty || myForm.get('password').touched && !myForm.get('password').valid}">
+            <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
+                <div class="error" *ngIf="myForm.get('password').errors.required">La contraseña es obligatoria</div>
+                <div class="error" *ngIf="myForm.get('password').errors.minlength">La contraseña es incorrecta</div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-danger btn-block" [disabled]="loginForm.invalid" >Enviar</button>
+        </div>
+    </form>
+</body>
