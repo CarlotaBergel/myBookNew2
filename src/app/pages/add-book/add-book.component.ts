@@ -10,17 +10,15 @@ import { BooksService } from 'src/app/shared/book.service';
 })
 
 export class AddBookComponent {
-  
   public books : Book[];
 
   constructor(private addBook: BooksService, private router:Router){
     this.books= this.addBook.getAll();
   } 
 
-  addBooks(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number):void{
+  addBooks(title:string, type:string, author:string, price:number, photo:string, id_book:number):void{
     console.log(title)
     this.books.push(new Book(title, type, author, price, photo));
   }
 
-  
 }

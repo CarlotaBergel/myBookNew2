@@ -1,25 +1,17 @@
 <body>
     <h1>LIBROS</h1>
     <p id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis, beatae tempora sequi architecto repellendus! Vel fuga, laudantium voluptatem officiis repellat eligendi quia cumque delectus perferendis harum blanditiis autem? Ut. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dolores voluptatum dicta veritatis doloribus repudiandae praesentium ullam suscipit minima nulla illum eligendi blanditiis rem, non, molestiae, harum sapiente accusantium dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet atque voluptatem, illum at esse exercitationem voluptas fugit mollitia. Corporis, iste ad officia soluta consectetur pariatur ratione cupiditate nihil aperiam?</p>
-    
-    <div class="input-group mb-3 buscar">
+        <div class="input-group mb-3 buscar">
         <input type="text" class="form-control" placeholder="Buscador de libros" aria-label="Buscador de libros" #id_book aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" (click)="search(id_book.value)">Buscar</button>
         </div>
     </div>
-    
-    <div class="cards">
+        <div class="cards">
         
-        <div *ngIf="book.length === 0"> 
-            <h1>No hay libros disponbles</h1> 
+        <div class="cards">
+            <div *ngIf="book.length === 0"> <h1>No hay libros disponbles</h1> </div>
+            <ng-container *ngFor="let bookPadre of book"><app-card [libro]="bookPadre" (cerrarCard) = "cerrarCard($event)"></app-card></ng-container>
         </div>
-        
-        <ng-container *ngFor="let libroPadre of book; let i = index">
-            <app-card [libro]="libroPadre" [index]="i" (cerrarCard) = "cerrarCard($event)" ></app-card>            
-        </ng-container>
-
     </div>
-
-    
 </body>

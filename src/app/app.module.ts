@@ -12,6 +12,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { RefBooksPipe } from './pipes/ref-books.pipe';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { CardComponent } from './component/card/card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UpdateBookComponent } from './pages/update-book/update-book.component';
     RefBooksPipe,
     AddBookComponent,
     UpdateBookComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+.pares{
+    background-color: rgb(140, 225, 247)!important;
+}
+.impares{
+    background-color: rgb(33, 33, 58)!important;
+    color: white !important;
+}
+
+.imgCard{
+    margin-left: 60px;
+}
+#botonComprar{
+    background-color: black;
+}
+.buttonX{
+  display: flex;
+  justify-content: end; 
+}

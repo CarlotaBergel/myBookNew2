@@ -8,6 +8,7 @@ export class Book {
     public photo:string;
     //Variable del objeto BOOK que incrementa con la creación de un book
     private static contador:number = 0;
+    book: Book[];
 
 
     constructor(titulo:string, tipo:string, autor:string, precio:number, foto:string){
