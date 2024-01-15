@@ -22,15 +22,13 @@ export class BooksComponent {
     // console.log(number);
     this.book = this.book.filter(book => book.id_book !=number);
   }
-<<<<<<< HEAD
-=======
   search(id_book:number){
     console.log(id_book);
     // this.book = this.service.getAll();
     if(id_book){
+      // quitar filter poner get one
       this.book = this.service.getAll().filter(book => book.id_book == id_book);
     }else{ this.book = this.service.getAll()};
   console.log(this.book)
   }
->>>>>>> dia6
 }
