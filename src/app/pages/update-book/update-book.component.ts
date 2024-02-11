@@ -16,14 +16,9 @@ export class UpdateBookComponent {
 
   update(title:string, type:string, author:string, price:number, photo:string, id_book: number):void{
     console.log(title);
-    var resultado:boolean = this.service.edit(new Book(title, type, author, price, photo), id_book);
-
-    if(resultado){
-      alert("Modificado correctamente")
-    }
-    else{ 
-      alert("no se ha podido modificar")
-    }
-      
+    let newBook = new Book(title, type, author, price, photo, id_book);
+    let resultado;
+    //let resultado = this.service.edit(newBook);
+    this.service.edit(newBook).subscribe((data:string) => {resultado = data})
   }
 }

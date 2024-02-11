@@ -10,18 +10,21 @@ import { BooksService } from 'src/app/shared/book.service';
 })
 
 export class AddBookComponent {
-  public books : Book[];
+  //public books : Book[];
   private service : BooksService;
 
   constructor(private bookService: BooksService, private router:Router){
-    this.books= this.bookService.getAll();
+    //this.books = this.bookService.getAll();
     this.service = this.bookService;
-    console.log(this.books);
+    //console.log(this.books);
   } 
 
-  addBooks(title:string, type:string, author:string, price:number, photo:string):void{
-    console.log(title);
-    this.service.add(new Book(title, type, author, price, photo));
-    console.log(this.books);
+  addBooks(title:string, type:string, author:string, price:number, photo:string, id:number):void{
+    let newBook = new Book(title, type, author, price, photo, id);
+    console.log(newBook);
+    //this.service.add(newBook).subscribe;
+    let resultado;
+    this.service.add(newBook).subscribe((data:Book) => {resultado = data})
+    //console.log(this.books);
   }
 }

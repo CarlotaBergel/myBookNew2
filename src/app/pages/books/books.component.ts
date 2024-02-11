@@ -11,24 +11,32 @@ import { BooksService } from 'src/app/shared/book.service';
 export class BooksComponent {
 
   public book:Book[];
-  private service : BooksService;
 
   constructor(private bookService: BooksService){
-    this.service = this.bookService;
-    this.book = this.service.getAll();
+    this.book = [];
+    this.bookService.getAll().subscribe((data:Book[]) => {this.book = data})
   }
 
-  cerrarCard(number){
-    // console.log(number);
-    this.book = this.book.filter(book => book.id_book !=number);
+  cerrarCard(id:number){
+    console.log(id);
+    let libro = this.book.filter(b => b.id_book == id);
+    this.book = this.book.filter(b => b.id_book != id);
+    let resultado;
+    console.log(libro);
+
+    this.bookService.delete(libro[0].id_book).subscribe((data:string) => {resultado = data})
   }
+
   search(id_book:number){
     console.log(id_book);
     // this.book = this.service.getAll();
-    if(id_book){
-      // quitar filter poner get one
-      this.book = this.service.getAll().filter(book => book.id_book == id_book);
-    }else{ this.book = this.service.getAll()};
+    if(id_book.toString().length == 0){
+      console.log("LLAMO SIN ID DEL LIBRO");
+      this.bookService.getAll().subscribe((data:Book[]) => {this.book = data})
+    }else{
+      console.log("LLAMO CON ID DEL LIBRO");
+      this.bookService.getBookOne(id_book).subscribe((data:Book[]) => {this.book = data})
+    }
   console.log(this.book)
   }
 }

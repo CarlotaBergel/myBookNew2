@@ -16,6 +16,7 @@ import { FormLoginComponent } from './component/form-login/form-login.component'
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { UpdateBookComponent } from './pages/update-book/update-book.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
